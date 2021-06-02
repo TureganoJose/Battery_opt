@@ -78,7 +78,9 @@ Potentially a charging/discharging ramp constraint might also force the optimiza
 Asumptions:
 
 a) Fixed cost not factored in cost function
+
 b) The full period of simulation needs to be a day expressed in hours and integers if there is a daily market (i.e. no 2.3 days)
+
 c) Battery degradation has been linearised and it's been added as a linear penalty in the cost function, proportional to CAPEX-lifetime cycles ratio
 
 
@@ -93,6 +95,9 @@ The two classes are:
 I made sure that the number of cycles calculated were reasonable. I can calculate the maximum number of cycles and then I can add up the actual number of cycles from the solution plus the idle time.
 As stated above market 2 prices are generally higher so battery uses it for charging while discharging in market 1.
 
+Plots on the left hand side show charge power (top) vs discharge power (bottom). They also show the price of each market. X-axis is expresed in 0.5 hour intervals as a unit of time.
+Blue trace is Market 1. 
+Green trace is Market 2.
 
 
 ![Aurora_full_3_years](Aurora_pics/Aurora_full_3_years.png)
@@ -107,7 +112,7 @@ Perhaps the degradation penalty should force to slower charge/discharge cycles.
 Calendric degradation doesn't have much effect so that's another source of error to check.
 
 
-![Aurora_full_3_years](Aurora_Artificial_high_prices_market3.png)
+![Aurora_full_3_years](Aurora_pics/Aurora_Artificial_high_prices_market3.png)
 
 
 
@@ -121,7 +126,7 @@ Loads to do but I'm well over the 2-3 hours timeframe given. Just over 4 hours n
 - [ ] Error/warning logging and exception handling
 - [ ] Increase abstraction of classes and modularity ie declare variables, constraints and objective function in separate methods.
 - [ ] Solution is slow, there is a lot of potential to reduce the number of variables as daily market has the same number of associated variables as the intraday markets.
-- [ ] Non-linear approach to battery degradation, using bilinear or [piecewise]https://www.sciencedirect.com/science/article/pii/S0306261919320471 tricks seen in the literature.
+- [ ] Non-linear approach to battery degradation, using bilinear or [piecewise](https://www.sciencedirect.com/science/article/pii/S0306261919320471) tricks seen in the literature.
 
 ### License
 
