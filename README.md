@@ -2,12 +2,19 @@
 ## Aurora Research
 
 ### Project files
+
 `Market.xlsx` data of 3 different markets 
+
 `Battery Parameters.xlsx` battery parameters
+
 `Battery_opt.py` contains main function you need to run to solve optimisation
+
 `energy_classes.py` contains battery and market classes
+
 `\pictures` folder contains screenshots of plots and equations
+
 `Output_data.xlsx` excel file with output data from optimisation
+
 `requirements.txt` list of package needed
 
 ### Installation requirements
